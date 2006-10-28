@@ -1,0 +1,20 @@
+--- docbook-to-man-2.0.0.orig/cmd/docbook-to-man.sh.orig	2006-10-28 12:05:35.201989000 +0200
++++ docbook-to-man-2.0.0.orig/cmd/docbook-to-man.sh	2006-10-28 12:11:44.557072750 +0200
+@@ -39,7 +39,7 @@
+ 
+ ROOT=/usr
+ SGMLS=$ROOT/share/sgml
+-DOCBOOK=$SGMLS/docbook/dtd/4.1
++DOCBOOK=$SGMLS/docbook/sgml-dtd-4.1
+ 
+ if test -x /usr/bin/nsgmls; then
+     PARSER=/usr/bin/nsgmls
+@@ -51,7 +51,7 @@
+ INSTANT=/usr/bin/instant
+ INSTANT_OPT=${INSTANT_OPT:-"-d"}
+ 
+-CATALOG=$DOCBOOK/docbook.cat
++CATALOG=$DOCBOOK/catalog
+ DECL=$DOCBOOK/docbook.dcl
+ 
+ error=false
