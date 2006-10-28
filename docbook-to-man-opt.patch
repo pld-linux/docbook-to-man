@@ -1,0 +1,12 @@
+--- docbook-to-man-2.0.0.orig/Instant/tptregexp/Makefile.orig	1999-07-03 14:58:23.000000000 +0200
++++ docbook-to-man-2.0.0.orig/Instant/tptregexp/Makefile	2006-10-28 11:58:46.460444750 +0200
+@@ -50,7 +50,8 @@
+ # -p			profiler
+ PROF=
+ 
+-CFLAGS=-O $(ENV) $(TEST) $(PROF)
++OPT=-O
++CFLAGS=$(OPT) $(ENV) $(TEST) $(PROF)
+ LINTFLAGS=$(LENV) $(TEST) -ha
+ LDFLAGS=
+ 
