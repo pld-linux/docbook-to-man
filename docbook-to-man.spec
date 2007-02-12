@@ -1,5 +1,5 @@
 Summary:	Converter from DocBook SGML into roff man macros
-Summary(pl):	Konwerter z formatu DocBook SGML do roff (uøywanego przez program man)
+Summary(pl.UTF-8):   Konwerter z formatu DocBook SGML do roff (u≈ºywanego przez program man)
 Name:		docbook-to-man
 Version:	2.0.0
 Release:	1
@@ -26,8 +26,8 @@ manpages from the DocBook SGML format into nroff/troff man macros.
 This is not the original version by Fred Dalrymple, but one with the
 modifications by David Bolen with Debian changes.
 
-%description -l pl
-docbook-to-man to wsadowy konwerter przekszta≥caj±cy strony manuala
+%description -l pl.UTF-8
+docbook-to-man to wsadowy konwerter przekszta≈ÇcajƒÖcy strony manuala
 uniksowego z formatu DocBook SGML do makr nroffa/troffa.
 
 Nie jest to oryginalna wersja autorstwa Freda Dalrymple'a, lecz wersja
