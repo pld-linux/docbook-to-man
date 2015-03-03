@@ -2,14 +2,15 @@ Summary:	Converter from DocBook SGML into roff man macros
 Summary(pl.UTF-8):	Konwerter z formatu DocBook SGML do roff (używanego przez program man)
 Name:		docbook-to-man
 Version:	2.0.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Applications/Publishing/SGML
 # original: http://www.oasis-open.org/docbook/tools/dtm/%{name}.tar.gz
 # we use ANS version, available in Debian
 Source0:	http://ftp.debian.org/debian/pool/main/d/docbook-to-man/%{name}_%{version}.orig.tar.gz
 # Source0-md5:	84946e13a0e54057e9cbf8ad7eec4afa
-Patch0:		%{name}-debian.patch
+Patch0:		http://ftp.debian.org/debian/pool/main/d/docbook-to-man/%{name}_%{version}-28.diff.gz
+# Patch0-md5:	ac83d1d8852bcaadeb6bb81d559ea5c9
 Patch1:		%{name}-opt.patch
 Patch2:		%{name}-PLD.patch
 URL:		http://www.oasis-open.org/docbook/tools/dtm/
@@ -49,12 +50,11 @@ z modyfikacjami Davida Bolena oraz zmianami z Debiana.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/sgml,%{_mandir}/man{1,5}}
-
 %{__make} install \
 	ROOT=$RPM_BUILD_ROOT%{_prefix}
 
-install Doc/{docbook-to-man.1,instant.1} $RPM_BUILD_ROOT%{_mandir}/man1
-install Doc/transpec.1 $RPM_BUILD_ROOT%{_mandir}/man5/transpec.5
+cp -p Doc/{docbook-to-man.1,instant.1} $RPM_BUILD_ROOT%{_mandir}/man1
+cp -p Doc/transpec.1 $RPM_BUILD_ROOT%{_mandir}/man5/transpec.5
 
 %clean
 rm -rf $RPM_BUILD_ROOT
