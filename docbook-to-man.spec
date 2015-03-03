@@ -37,7 +37,9 @@ z modyfikacjami Davida Bolena oraz zmianami z Debiana.
 %prep
 %setup -q -n %{name}-%{version}.orig
 %patch0 -p1
-%{__patch} -p1 -s < debian/patches/01-conglomeration.dpatch
+for patch in $(cat debian/patches/00list); do
+	%{__patch} -p1 -s < debian/patches/$patch.dpatch
+done
 %patch1 -p1
 %patch2 -p1
 
