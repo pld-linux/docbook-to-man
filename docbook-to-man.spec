@@ -2,7 +2,7 @@ Summary:	Converter from DocBook SGML into roff man macros
 Summary(pl.UTF-8):	Konwerter z formatu DocBook SGML do roff (używanego przez program man)
 Name:		docbook-to-man
 Version:	2.0.0
-Release:	2
+Release:	3
 License:	MIT
 Group:		Applications/Publishing/SGML
 # original: http://www.oasis-open.org/docbook/tools/dtm/%{name}.tar.gz
