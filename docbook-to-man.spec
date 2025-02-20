@@ -36,12 +36,12 @@ z modyfikacjami Davida Bolena oraz zmianami z Debiana.
 
 %prep
 %setup -q -n %{name}-%{version}.orig
-%patch0 -p1
+%patch -P0 -p1
 for patch in $(cat debian/patches/00list); do
 	%{__patch} -p1 -s < debian/patches/$patch.dpatch
 done
-%patch1 -p1
-%patch2 -p1
+%patch -P1 -p1
+%patch -P2 -p1
 
 %build
 %{__make} \
