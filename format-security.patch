@@ -1,0 +1,12 @@
+diff -ur docbook-to-man-2.0.0.orig/Instant/browse.c docbook-to-man-2.0.0/Instant/browse.c
+--- docbook-to-man-2.0.0.orig/Instant/browse.c	1999-07-03 14:58:23.000000000 +0200
++++ docbook-to-man-2.0.0/Instant/browse.c	2025-02-21 00:27:50.313026958 +0100
+@@ -168,7 +168,7 @@
+ 	    if (av[1] && isdigit(*av[1])) {
+ 		n = atoi(av[1]);
+ 		if (n < ce->ndcont) {
+-		    printf(ce->dcont[n]);
++		    printf("%s", ce->dcont[n]);
+ 		    fputs("\n", stdout);
+ 		}
+ 		else if (ce->ndcont == 0)

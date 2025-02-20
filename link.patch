@@ -1,0 +1,11 @@
+diff -ur docbook-to-man-2.0.0.orig/Instant/main.c docbook-to-man-2.0.0/Instant/main.c
+--- docbook-to-man-2.0.0.orig/Instant/main.c	2025-02-21 00:41:01.489354605 +0100
++++ docbook-to-man-2.0.0/Instant/main.c	2025-02-21 00:41:58.574413270 +0100
+@@ -92,6 +92,7 @@
+ 
+ #define STORAGE
+ #include "general.h"
++#undef STORAGE
+ 
+ /* [ANS-db3l] Included for character mapping in ReadESIS */
+ #include <tptregexp.h>

@@ -1,0 +1,34 @@
+diff -ur docbook-to-man-2.0.0.orig/Instant/traninit.c docbook-to-man-2.0.0/Instant/traninit.c
+--- docbook-to-man-2.0.0.orig/Instant/traninit.c	1999-07-03 14:58:23.000000000 +0200
++++ docbook-to-man-2.0.0/Instant/traninit.c	2025-02-21 00:22:52.436411826 +0100
+@@ -82,6 +82,7 @@
+ 
+ /* forward references */
+ void	RememberTransSpec(Trans_t *, int);
++extern void ExpandVariables(char *in, char *out, Element_t *e);
+ 
+ /* ______________________________________________________________________ */
+ /*  Read the translation specs from the input file, storing in memory.
+diff -ur docbook-to-man-2.0.0.orig/Instant/tranvar.c docbook-to-man-2.0.0/Instant/tranvar.c
+--- docbook-to-man-2.0.0.orig/Instant/tranvar.c	1999-07-03 14:58:23.000000000 +0200
++++ docbook-to-man-2.0.0/Instant/tranvar.c	2025-02-21 00:26:45.617566936 +0100
+@@ -79,6 +79,7 @@
+ void	ChaseIDRefs(Element_t *, char *, char *, FILE *);
+ void	Find(Element_t *, int, char **, FILE *);
+ void	GetIDREFnames();
++extern void CALStable(Element_t *e, FILE *fp, char **av, int ac);
+ 
+ /* ______________________________________________________________________ */
+ /*  Handle "special" variable - read file, run command, do action, etc.
+diff -ur docbook-to-man-2.0.0.orig/Instant/main.c docbook-to-man-2.0.0/Instant/main.c
+--- docbook-to-man-2.0.0.orig/Instant/main.c	2025-02-21 00:31:50.623187330 +0100
++++ docbook-to-man-2.0.0/Instant/main.c	2025-02-21 00:35:10.628664716 +0100
+@@ -191,7 +191,7 @@
+     time_t	tnow;
+     struct tm	*nowtm;
+     char	*cp, buf[100];
+-    extern	int gethostname(char *, int);	/* not in a system .h file... */
++    extern	int gethostname(char *, size_t);	/* not in a system .h file... */
+ 
+     /* where we try to find data/library files */
+     if (!(tpt_lib=getenv(TPT_LIB))) tpt_lib = DEF_TPT_LIB;

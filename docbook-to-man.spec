@@ -13,6 +13,10 @@ Patch0:		http://ftp.debian.org/debian/pool/main/d/docbook-to-man/%{name}_%{versi
 # Patch0-md5:	ac83d1d8852bcaadeb6bb81d559ea5c9
 Patch1:		%{name}-opt.patch
 Patch2:		%{name}-PLD.patch
+Patch3:		includes.patch
+Patch4:		types.patch
+Patch5:		format-security.patch
+Patch6:		link.patch
 URL:		http://www.oasis-open.org/docbook/tools/dtm/
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	opensp
@@ -42,6 +46,10 @@ for patch in $(cat debian/patches/00list); do
 done
 %patch -P1 -p1
 %patch -P2 -p1
+%patch -P3 -p1
+%patch -P4 -p1
+%patch -P5 -p1
+%patch -P6 -p1
 
 %build
 %{__make} \
